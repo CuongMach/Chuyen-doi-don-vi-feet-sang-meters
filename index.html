@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi feet và meters</title>
+</head>
+<body>
+<!--<input type="number" id="nhapsodoi" placeholder="Nhập số muốn đổi">-->
+<select id="chon">
+    <option value="1">Feet sang Meters</option>
+    <option value="2">Meters sang Feet</option>
+</select>
+<!--<input type="number" id="ket qua" placeholder="Kết quả">-->
+<!--<button onclick="OK()">Đổi</button>-->
+<input type="number" onchange="ketqua()" oninput="ketqua()" id="giatri" >
+<p id="hienthi"></p>
+<script>
+        function footToMeters(number) {
+            foot = 3.279 * number
+            return foot;
+        }
+
+        function meterToFoot(number) {
+            meter = 0.305 * number
+            return meter;
+        }
+    function ketqua(){
+            let number = document.getElementById("giatri").value;
+            let select=document.getElementById("chon").value;
+            if(select==="1"){
+                document.getElementById("hienthi").innerHTML = footToMeters(number) + "feet"
+            }else {
+                document.getElementById("hienthi").innerHTML = meterToFoot(number) + "meter"
+            }
+    }
+
+
+
+</script>
+</body>
+</html>
